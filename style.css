@@ -1,0 +1,516 @@
+*{ /* sets up webpage */
+    margin: 0; 
+    padding: 0;  
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth; /* allows smooth scrolling */
+}
+
+body{ /* <body></body> */
+    background: #04060D;
+    color: #fff;
+
+}
+#header{ /* use '#' to set up an id and style everything under it */
+    width: 100%;
+    height: 100vh;
+    /*background: url(images/background.png);*/
+    background-size: cover;
+    background-position: center;
+}
+
+.container{ /* use '.' when setting up a class and style everything in that class */
+    padding: 10px 10%; /* top and bottom padding, left and right padding */
+}
+
+.cube{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animate 5s linear infinite;
+    margin-left: 1000px;
+    margin-top: -300px;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+    
+}
+
+.cube div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cube div span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515, #3E8DE3);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.top::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: rgb(0, 153, 255);
+    transform: translateZ(-400px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(62, 141, 227, 0.2), 0 0 200px rgba(62, 141, 227, 0.4), 0 0 300px rgba(62, 141, 227, 0.6), 0 0 400px rgba(62, 141, 227, 0.8),  0 0 500px rgb(62, 141, 227, 1);
+}
+
+
+nav{ /* <nav></nav> */
+    display: flex; /* sets up flexbox */
+    justify-content: space-between; /* sets space between logo and nav bar */
+    align-items: center; /* aligns logo and nav bar */
+    flex-wrap: wrap; /* allows nav bar to wrap */
+}
+
+.logo{ /* setting up logo class */
+    width : 140px;
+}
+
+nav ul li{ /* setting up nav bar */
+    list-style: none;
+    display: inline-block; /* allows nav bar to be horizontal */
+    margin: 10px 20px;
+}
+
+nav ul li a{ /* setting up nav bar links */
+    text-decoration: none; /* removes underline */
+    color: #fff;
+    font-size: 18px;
+    position: relative; 
+}
+
+nav ul li a::after{ /* adding after effects when cursor hovers over links */
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #3E8DE3;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{ /* sets width of red underlining once hovering */
+    width: 100%;
+}
+
+.header-text{ /* setting up header text class */
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{ /*setting up <h1></h1> in header text class*/
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span{ /* edit what is between span */
+    color: #1F51FF;
+}
+
+/*About Section*/
+
+#about{ /* setting up about id */
+    padding: 80px 0; /* top and bottom padding */
+}
+
+.row{ 
+    display: flex; /* sets up flexbox */
+    justify-content: space-between; /* sets space between columns */
+    flex-wrap: wrap; /* allows columns to wrap */
+}
+
+.about-col-1{ 
+    flex-basis: 35%; /* sets width of column */
+}
+
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15%; /* makes image round */
+}
+
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.subtitle{ 
+    font-size: 60px;
+    font-weight: 600;
+    color: #D3D4D7;
+}
+
+.tab-titles{ /* setting up tab titles class */
+    display: flex;
+    margin: 20px 0 40px; /* top right bottom left */
+}
+
+.tab-links{ /* setting up tab links class */
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer; /* changes cursor to hand when hovering over links */
+    position: relative; /* allows us to use ::after */
+}
+
+.tab-links::after{ /* adding after effects when cursor hovers over links */
+    content: ''; 
+    width: 0;  /* width of red underlining */
+    height: 3px; /* thickness of red underlining */
+    background: #3E8DE3;
+    position: absolute; /* allows us to use left and bottom */
+    left: 0; /* sets position of red underlining */
+    bottom: -8px; /* sets position of red underlining */
+    transition: 0.5s; /* sets speed of red underlining */
+}
+
+.tab-links.active-link::after{ /* sets width of red underlining once hovering */
+    width: 50%; 
+}
+
+.tab-contents ul li{ /* setting up list in tab-contents class */
+    list-style: none; /* removes bullet points */
+    margin: 10px 0;
+}
+
+.tab-contents ul li span{ /* edit what is between span in list */
+    font-size: 14px;
+    color: #3E8DE3;
+}
+
+.tab-contents{ /* when tab isnt clicked do not show anything */
+    display: none;
+}
+
+.tab-contents.active-tab{ /* when tab is clicked show content */
+    display: block;
+}
+
+/*Services Section*/
+#services{
+    padding: 30px 0;
+}
+
+.services-list{
+    display: grid; /* sets up grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* sets up grid columns */
+    grid-gap: 40px; /* sets space between grid columns */
+    margin-top: 50px;
+}
+
+.subtitle{
+    font-size: 60px;
+    font-weight: 600;
+    color: #D3D4D7;
+}
+
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    
+    transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div a{
+    text-decoration: none;
+    color: #D3D4D7;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover{
+    background: #3E8DE3;
+    transform: translateY(-10px);
+}
+
+/*Portfolio Section*/
+#portfolio{
+    padding: 50px 0;
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #3E8DE3);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a{
+    margin-top: 20px;
+    text-decoration: none;
+    color: #3E8DE3;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: -60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #3E8DE3;
+    padding: 14px 50px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: #3E8DE3;
+}
+
+/*Contact Section*/
+.contact-left{
+    flex-wrap: 35%;
+}
+
+.contact-right{
+    flex-wrap: 60%;
+}
+
+.contact-left p{
+    margin-top: 20px;
+}
+
+.contact-left i{
+    color: #3E8DE3;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons a i{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    margin-top: 20px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+
+}
+
+.social-icons a:hover i{
+    color: #3E8DE3;
+    transform: translateY(-5px);
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: #3E8DE3;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/*CSS for mobile devices*/
+
+nav .fa-solid{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url("images/phone-background.png");
+    }
+
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+
+    .header-text h1{
+        font-size: 30px;
+    }
+
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul{
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: 0.5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 25px;
+
+    }
+
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    .subtitle{
+        font-size: 40px;
+    }
+
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+
+    .tab-links{
+        font-size:  16px;
+        margin-right: 20px;
+    }
+
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+
+    .social-icons i{
+        margin-top: 20px;
+    }
+
+    .copyright{
+        font-size: 12px;
+    }
+}
+
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}
