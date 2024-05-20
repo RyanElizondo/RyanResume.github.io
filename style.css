@@ -12,8 +12,8 @@ html{
 body{ /* <body></body> */
     background: #04060D;
     color: #fff;
-
 }
+
 #header{ /* use '#' to set up an id and style everything under it */
     width: 100%;
     height: 100vh;
