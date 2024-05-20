@@ -1,6 +1,23 @@
+*{ /* sets up webpage */
+    margin: 0; 
+    padding: 0;  
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth; /* allows smooth scrolling */
+}
+
 body{ /* <body></body> */
     background: #04060D;
     color: #fff;
+}
+
+.header{ /* <header></header> */
+    padding: 1rem;
+    text-align: center;
+    font-size: 30px;
 }
 
 .container {
