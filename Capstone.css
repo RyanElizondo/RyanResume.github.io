@@ -16,7 +16,7 @@ body{ /* <body></body> */
 
 #header{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     /*background: url(images/background.png);*/
     background-size: cover;
     background-position: center;
@@ -31,10 +31,11 @@ body{ /* <body></body> */
 }
 
 .header-text{
-    font-size: 1.5em;
+    font-size: 2rem;
     font-weight: 600;
     margin-top: 20px;
     text-align: center;
+    margin-bottom: 80px;
 }
 
 .slider-wrapper{
@@ -80,4 +81,88 @@ body{ /* <body></body> */
 
 .slider-nav a:hover{
     opacity: 1;
+}
+
+/* about-proj section*/
+#about-proj{
+    padding: 60px 0; /* top and bottom padding */
+}
+
+.subtitle{ 
+    font-size: 60px;
+    font-weight: 600;
+    color: #D3D4D7;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.row{ 
+    display: flex; /* sets up flexbox */
+    justify-content: space-between; /* sets space between columns */
+    flex-wrap: wrap; /* allows columns to wrap */
+}
+
+.col-1{ 
+    flex-basis: 35%; /* sets width of column */
+}
+
+.col-1 img{
+    width: 100%;
+    border-radius: 15%; /* makes image round */
+    filter: drop-shadow(-10px -10px 10px #3E8DE3); /* adds shadow to image */
+    transition: transform 0.5s; /* adds transition to image */
+}
+
+.col-1:hover img{
+    transform: translateY(-10px); /* enlarges image */
+}
+
+.col-2{
+    /*bring text lower*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 60%;
+}
+
+.car-text{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #D3D4D7;
+    margin-bottom: 20px;
+}
+
+.row-2{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col-4{
+    flex-basis: 35%;
+}
+
+.col-4 img{
+    width: 100%;
+    border-radius: 15%;
+    filter: drop-shadow(-10px -10px 10px #3E8DE3);
+    transition: transform 0.5s;
+}
+
+.col-4:hover img{
+    transform: translateY(-10px);
+}
+
+.col-3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 60%;
+}
+
+.avm-text{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #D3D4D7;
+    margin-bottom: 20px;
+    text-align: center;
 }
