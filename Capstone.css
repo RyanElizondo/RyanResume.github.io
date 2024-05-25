@@ -74,7 +74,7 @@ body{ /* <body></body> */
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #363434;
     opacity: 0.75;
     transition: opacity ease 250ms;
 }
@@ -129,6 +129,7 @@ body{ /* <body></body> */
     font-weight: 500;
     color: #D3D4D7;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .row-2{
@@ -165,4 +166,99 @@ body{ /* <body></body> */
     color: #D3D4D7;
     margin-bottom: 20px;
     text-align: center;
+}
+
+.row-3{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col-5{
+    flex-basis: 35%;
+}
+
+.col-5 img{
+    width: 100%;
+    border-radius: 15%;
+    filter: drop-shadow(-10px -10px 10px #3E8DE3);
+    transition: transform 0.5s;
+}
+
+.col-5:hover img{
+    transform: translateY(-10px);
+}
+
+.col-6{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 60%;
+}
+
+.end-text{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #D3D4D7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.row-4{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.row-4 img{
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.row-4 h3{
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* About Project 2 */
+#about-proj2{
+    padding: 60px 0;
+}
+
+.workflow img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.5s;
+}
+
+.workflow img:hover{
+    transform: translateY(-10px);
+}
+
+.workflow h3{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.poster img{
+    margin-top: 20px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.5s;
+}
+
+.poster img:hover{
+    transform: translateY(-10px);
+}
+
+.poster h3{
+    text-align: center;
+    margin-top: 20px;
 }
