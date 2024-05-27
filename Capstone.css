@@ -99,6 +99,7 @@ body{ /* <body></body> */
     display: flex; /* sets up flexbox */
     justify-content: space-between; /* sets space between columns */
     flex-wrap: wrap; /* allows columns to wrap */
+    margin-bottom: 60px; /* sets margin between rows */
 }
 
 .col-1{ 
@@ -129,7 +130,12 @@ body{ /* <body></body> */
     font-weight: 500;
     color: #D3D4D7;
     margin-bottom: 20px;
-    text-align: center;
+}
+
+.col-2 iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .row-2{
@@ -166,6 +172,23 @@ body{ /* <body></body> */
     color: #D3D4D7;
     margin-bottom: 20px;
     text-align: center;
+}
+
+.col-3 img{
+    width: 10%;
+}
+
+.col-3 ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.col-3 ul img{
+    width: 200px;
+    height: 200px;
+    margin: 0 10px;
 }
 
 .row-3{
