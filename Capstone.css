@@ -175,7 +175,10 @@ body{ /* <body></body> */
 }
 
 .col-3 img{
-    width: 10%;
+    /*center the image*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .col-3 ul{
@@ -227,24 +230,20 @@ body{ /* <body></body> */
     text-align: center;
 }
 
-.row-4{
+.col-6 ul{
+    list-style: none;
+    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.row-4 img{
-    width: 50%;
-    height: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+.col-6 ul img{
+    margin: 0 10px;
+    transition: transform 0.5s;
 }
 
-.row-4 h3{
-    text-align: center;
-    margin-top: 20px;
+.col-6:hover ul img{
+    transform: translateY(-10px);
 }
 
 /* About Project 2 */
@@ -284,4 +283,51 @@ body{ /* <body></body> */
 .poster h3{
     text-align: center;
     margin-top: 20px;
+}
+
+/*demos section*/
+#demos{
+    padding: 60px 0;
+}
+
+.row-4{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col-7{
+    flex-basis: 35%;
+}
+
+.col-7 video{
+    width: 100%;
+}
+
+.col-8{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 35%;
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #3E8DE3;
+    padding: 14px 50px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: #3E8DE3;
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: #3E8DE3;
 }
